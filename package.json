@@ -1,0 +1,35 @@
+{
+  "name": "desktop-eas",
+  "version": "1.0.0",
+  "description": "Emergency Alert System desktop viewer",
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "postinstall": "electron-vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PickleModifications/desktop-eas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PickleModifications/desktop-eas/issues"
+  },
+  "homepage": "https://github.com/PickleModifications/desktop-eas#readme",
+  "devDependencies": {
+    "@electron-toolkit/tsconfig": "^2.0.0",
+    "@electron-toolkit/utils": "^4.0.0",
+    "@types/leaflet": "^1.9.21",
+    "electron": "^35.7.5",
+    "electron-vite": "^5.0.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  }
+}
