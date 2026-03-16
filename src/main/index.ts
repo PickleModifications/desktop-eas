@@ -70,7 +70,7 @@ app.whenReady().then(() => {
       return
     }
 
-    // Show popup for new alerts only
+    // Show popup for genuinely new alerts only
     const settings = getSettings()
     if (settings.alertsEnabled) {
       const newAlerts = alerts.filter((a: any) => !knownAlertIds.has(a.id))
@@ -79,7 +79,10 @@ app.whenReady().then(() => {
       }
     }
 
-    knownAlertIds = new Set(alerts.map((a: any) => a.id))
+    // Accumulate — never remove IDs so a 0-alert scrape doesn't reset state
+    for (const a of alerts) {
+      knownAlertIds.add(a.id)
+    }
   })
 })
 

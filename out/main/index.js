@@ -424,7 +424,9 @@ electron.app.whenReady().then(() => {
         showAlertPopups(newAlerts);
       }
     }
-    knownAlertIds = new Set(alerts.map((a) => a.id));
+    for (const a of alerts) {
+      knownAlertIds.add(a.id);
+    }
   });
 });
 electron.app.on("before-quit", () => {
